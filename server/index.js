@@ -1,12 +1,15 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+require('./models/Player');
+require('./services/passport');
+
+mongoose.connect(keys.mongoURI);
+
 const app = express();
 
-app.get('/', (req, res) => {
-    res.send({hi: 'there'});
-});
-
+require('./routes/authRoutes')(app);
 
 app.listen(5000);
 
-//import express from 'express';
 
