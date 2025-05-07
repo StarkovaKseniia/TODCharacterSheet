@@ -23,14 +23,15 @@ passport.use(
         callbackURL: '/auth/google/callback',
         proxy: true
         }, 
-        (accessToken, refreshToken, profile, done) => {
-            Player.findOne({ googleId: profile.id }).then((existingPlayer) => {
-                    if (existingPlayer){
-                        done(null, existingPlayer);
-                    } else {
-                        new Player({ googleId: profile.id }).save().then(player => done(null, player));
-                    }
-                }) 
+        async (accessToken, refreshToken, profile, done) => {
+            const existingPlayer = await Player.findOne({ googleId: profile.id });
+
+            if (existingPlayer){
+                return done(null, existingPlayer);
+            } 
+            
+            const player = await new Player({ googleId: profile.id }).save();
+            done (nuul, player);
         }
     )
 );
