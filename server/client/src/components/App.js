@@ -19,7 +19,7 @@ class App extends Component {
                     <div>
                         <Header />
                         <Route exact path="/" component={Sheet} /> 
-                        <Route path="/cabinet" component={Cabinet} /> 
+                        <Route exact path="/cabinet" component={Cabinet} /> 
                     </div>
                 </BrowserRouter>
             </div>
