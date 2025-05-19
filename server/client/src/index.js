@@ -1,5 +1,7 @@
 import headerCSS from './styles/header.css';
-import 'materialize-css/dist/css/materialize.min.css';
+import cabinetCSS from './styles/cabinet.css';
+import sheetCSS from './styles/characterSheet.css';
+//import 'materialize-css/dist/css/materialize.min.css';
 
 import ReactDOM from "react-dom/client";
 import { Provider } from 'react-redux';

@@ -1,0 +1,149 @@
+body {
+    font-family: "Gill Sans Extrabold", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.7vw;
+}
+  
+h1 {
+text-align: center;
+}
+
+.topnav {
+background-color: #000;
+overflow: hidden;
+}
+
+.topnav a, h2 {
+float: left;
+color: #fff;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 15px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+}
+
+.buttons button {
+    text-transform: uppercase;
+    outline: 0;
+    background: #FFFFFF;
+    width: 15vw;
+    border: 0;
+    padding: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+.buttons button:hover {
+    background: #bbb;
+}
+
+.characters {
+    width: 80%;
+    margin: auto;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.character a {
+    text-decoration: none;
+    color: #000;
+}
+
+.character #name{
+    font-weight: bolder;
+    font-size: 1vw;
+}
+
+.character #name span {
+    font-weight: lighter;
+    font-size: 0.7vw;
+}
+
+.folder, .character {
+    position: relative;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.2vw 1vw;
+    margin-bottom: 2vw;
+}
+
+.all, .fold {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.character {
+    margin-right: 1vw;
+    flex-basis: 20%;
+}
+  
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 12px 16px;
+z-index: 1;
+}
+  
+.folder label:hover .dropdown-content {
+    display: block;
+}
+
+.character:hover .dropdown-content {
+    display: block;
+}
+
+.fold {
+padding: 10px;
+width: 100%;
+height: fit-content;
+}
+
+.unfolder { display: none; }
+
+.toggle-label {
+	display: inline-block;
+	cursor: pointer;
+	padding: 10px;
+}
+.unfold-icon, .fold-icon {
+  width: 0.5vw;
+  display: inline-block;
+  margin-right: 15px;
+}
+.unfolder ~ .fold {
+  display: none;
+}
+.unfolder ~ label .fold-icon {
+  display: none;
+}
+
+.unfolder:checked ~ .fold {
+  display: block;
+}
+.unfolder:checked ~ label .fold-icon {
+  display: inline-block;
+}
+.unfolder:checked ~ label .unfold-icon {
+  display: none;
+}
+  

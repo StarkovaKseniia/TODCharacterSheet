@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header';
-import Sheet from './Sheet';
-const Cabinet = () => <h2>Cabinet</h2>
+import Sheet from './characterSheet/Sheet';
+import Cabinet from './Cabinet';
 
 class App extends Component {
     componentDidMount() {
@@ -14,12 +14,12 @@ class App extends Component {
 
     render () {
         return (
-            <div className="container">
+            <div>
                 <BrowserRouter>
                     <div>
                         <Header />
                         <Route exact path="/" component={Sheet} /> 
-                        <Route exact path="/cabinet" component={Cabinet} /> 
+                        <Route path="/cabinet" component={Cabinet} /> 
                     </div>
                 </BrowserRouter>
             </div>
